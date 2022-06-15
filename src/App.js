@@ -1,5 +1,9 @@
+import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./assets/colorPalette";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -8,8 +12,9 @@ import Reviews from "./pages/Reviews";
 import Store from "./pages/Store";
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/About" element={<About />} />
@@ -19,7 +24,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
         </Routes>
       </Router>
-    </div>
+    </ThemeProvider>
   );
 }
 
