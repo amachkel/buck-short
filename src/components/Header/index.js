@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import Logo from "../../assets/images/Logos/logo_size_invert.png";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -15,15 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 const drawerWidth = 240;
-const navItems = [
-  "Home",
-  "About",
-  "Blog",
-  "Events",
-  "Reviews",
-  "Store",
-  "Contact",
-];
+const navItems = ["Home", "Blog", "Events", "Reviews", "Store", "Contact"];
 
 export default function Header(props) {
   const { window } = props;
@@ -39,9 +32,23 @@ export default function Header(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+            {item === "Home" ? (
+              <ListItemButton
+                component={RouterLink}
+                to={"/"}
+                sx={{ textAlign: "center" }}
+              >
+                <ListItemText primary={item} />
+              </ListItemButton>
+            ) : (
+              <ListItemButton
+                component={RouterLink}
+                to={`/${item}`}
+                sx={{ textAlign: "center" }}
+              >
+                <ListItemText primary={item} />
+              </ListItemButton>
+            )}
           </ListItem>
         ))}
       </List>

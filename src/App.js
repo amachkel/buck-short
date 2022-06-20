@@ -4,8 +4,7 @@ import theme from "./assets/colorPalette";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import LandingPage from "./pages/LandingPage";
-import About from "./pages/About";
+import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Events from "./pages/Blog";
 import Reviews from "./pages/Reviews";
@@ -16,8 +15,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Events" element={<Events />} />
           <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Store" element={<Store />} />
