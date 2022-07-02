@@ -1,5 +1,6 @@
 import React from "react";
-import Logo from "../assets/images/Logos/buck-short.png";
+import Background from "../assets/images/background.png";
+import Logo from "../assets/images/Logos/a-buck-3.png";
 // import { Link as Scroll } from "react-scroll";
 import { styled } from "@mui/system";
 import {
@@ -13,10 +14,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const HomeStyled = styled("div")({
   minHeight: "100vh",
-  backgroundImage: `url(${Logo})`,
+  backgroundImage: `url(${Background})`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  backgroundSize: "contain",
+  backgroundSize: "cover",
 });
 
 export default function Home() {
@@ -30,17 +31,32 @@ export default function Home() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-end",
+          flexDirection: "column",
+          justifyContent: "space-around",
           minHeight: "100vh",
         }}
       >
+        <Box
+          component={"img"}
+          className="logo"
+          src={Logo}
+          sx={{
+            height: 300,
+            maxWidth: 400,
+            mx: "auto",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        />
         {/* <Scroll to="welcome" smooth={true}> */}
         <IconButton>
           <ExpandMoreIcon
             sx={{
               fontSize: "8rem",
-              color: "#000000",
+              color: "#FFF",
+
+              justifyContent: "flex-end",
+              alignItems: "center",
             }}
           />
         </IconButton>
