@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Background from "../assets/images/background.png";
-import Logo from "../assets/images/Logos/a-buck-3.png";
+import Logo from "../assets/images/Logos/a-buck-3-removebg.png";
 // import { Link as Scroll } from "react-scroll";
 import { styled } from "@mui/system";
 import {
@@ -20,11 +20,20 @@ const HomeStyled = styled("div")({
   backgroundSize: "cover",
 });
 
+const AlignedDiv = styled("div")({
+  textAlign: "center",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-around",
+  height: "100vh",
+});
+
 export default function Home() {
-  // const [checked, setChecked] = useState(false);
-  // useEffect(() => {
-  //   setChecked(true);
-  // }, []);
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    setChecked(true);
+  }, []);
+
   return (
     <HomeStyled>
       <CssBaseline />
@@ -36,37 +45,51 @@ export default function Home() {
           minHeight: "100vh",
         }}
       >
-        <Box
-          component={"img"}
-          className="logo"
-          src={Logo}
-          sx={{
-            height: 300,
-            maxWidth: 400,
-            mx: "auto",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        />
-        {/* <Scroll to="welcome" smooth={true}> */}
-        <IconButton>
-          <ExpandMoreIcon
-            sx={{
-              fontSize: "8rem",
-              color: "#FFF",
-
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
-          />
-        </IconButton>
+        <AlignedDiv className="alignedDiv">
+          <Collapse
+            className="collapse"
+            in={checked}
+            {...(checked ? { timeout: 1000 } : {})}
+            collapsedSize={0}
+            // sx={{ mx: "auto", display: "flex", justifyContent: "center" }}
+          >
+            <Box
+              component={"img"}
+              className="logo"
+              src={Logo}
+              sx={{
+                height: "100%",
+                maxWidth: "100%",
+                mx: "auto",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            />
+          </Collapse>
+          <Collapse
+            className="collapse"
+            in={checked}
+            {...(checked ? { timeout: 1000 } : {})}
+            collapsedSize={50}
+            // sx={{ mx: "auto", display: "flex", justifyContent: "center" }}
+          >
+            <IconButton>
+              <ExpandMoreIcon
+                sx={{
+                  fontSize: "8rem",
+                  color: "#FFF",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                }}
+              />
+            </IconButton>
+          </Collapse>
+        </AlignedDiv>
         {/* </Scroll> */}
       </Box>
     </HomeStyled>
   );
-}
 
-{
   /* <Box sx={{ width: 300, height: 300 }}>
         <Typography color={"#000000"}>
           A Buck Short Productions is a film production company based out of
