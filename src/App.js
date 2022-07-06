@@ -11,6 +11,7 @@ import Reviews from "./pages/Reviews";
 import Store from "./pages/Store";
 import BsAdmin from "./pages/BsAdmin";
 import Post from "./pages/Post";
+import Contact from "./pages/Contact";
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Blog/:id" element={<Post />} />
           <Route path="/BsAdmin" element={<BsAdmin />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </Router>
     </ThemeProvider>

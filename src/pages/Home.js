@@ -13,7 +13,7 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GlitchFx from 'react-glitch-fx/lib/GlitchFx';
 
-const HomeStyled = styled("div")({
+const BackgroundStyled = styled("div")({
   minHeight: "100vh",
   backgroundImage: `url(${Background})`,
   backgroundRepeat: "no-repeat",
@@ -36,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (
-    <HomeStyled>
+    <BackgroundStyled>
       <CssBaseline />
       <Box
         sx={{
@@ -90,7 +90,7 @@ export default function Home() {
         </AlignedDiv>
         {/* </Scroll> */}
       </Box>
-    </HomeStyled>
+    </BackgroundStyled>
   );
 
   /* <Box sx={{ width: 300, height: 300 }}>
