@@ -9,6 +9,8 @@ import Blog from "./pages/Blog";
 import Events from "./pages/Blog";
 import Reviews from "./pages/Reviews";
 import Store from "./pages/Store";
+import BsAdmin from "./pages/BsAdmin";
+import Post from "./pages/Post";
 import Contact from "./pages/Contact";
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Store" element={<Store />} />
           <Route path="/Blog" element={<Blog />} />
+          <Route path="/Blog/:id" element={<Post />} />
+          <Route path="/BsAdmin" element={<BsAdmin />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
       </Router>
