@@ -9,6 +9,7 @@ import Blog from "./pages/Blog";
 import Events from "./pages/Blog";
 import Reviews from "./pages/Reviews";
 import Store from "./pages/Store";
+import Contact from "./pages/Contact";
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Reviews" element={<Reviews />} />
           <Route path="/Store" element={<Store />} />
           <Route path="/Blog" element={<Blog />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </Router>
     </ThemeProvider>
