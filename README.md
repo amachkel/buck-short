@@ -11,6 +11,9 @@
 
 ## Usage
 
+![buck-short-screenshot](https://user-images.githubusercontent.com/84882398/177590941-0ed60a1e-cade-4f69-84c2-e5aa5d5939c5.png)
+
+
 ## Technologies Used
 
 - HTML
