@@ -11,6 +11,7 @@ import {
   IconButton,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import GlitchFx from 'react-glitch-fx/lib/GlitchFx';
 
 const HomeStyled = styled("div")({
   minHeight: "100vh",
@@ -53,6 +54,7 @@ export default function Home() {
             collapsedSize={0}
             // sx={{ mx: "auto", display: "flex", justifyContent: "center" }}
           >
+            <GlitchFx>
             <Box
               component={"img"}
               className="logo"
@@ -65,6 +67,7 @@ export default function Home() {
                 justifyContent: "center",
               }}
             />
+            </GlitchFx>
           </Collapse>
           <Collapse
             className="collapse"
