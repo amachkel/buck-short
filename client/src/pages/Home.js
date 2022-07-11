@@ -4,8 +4,11 @@ import Logo from "../assets/images/Logos/a-buck-3-removebg.png";
 // import { Link as Scroll } from "react-scroll";
 import { styled } from "@mui/system";
 import { CssBaseline, Box, Collapse, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GlitchFx from "react-glitch-fx/lib/GlitchFx";
+import Alert from "@mui/material/Alert";
+import Auth from "../utils/auth";
 
 const BackgroundStyled = styled("div")({
   minHeight: "100vh",
@@ -26,6 +29,7 @@ const AlignedDiv = styled("div")({
 
 export default function Home() {
   const [checked, setChecked] = useState(false);
+  const [open, setOpen] = useState(true);
   useEffect(() => {
     setChecked(true);
   }, []);
@@ -49,6 +53,28 @@ export default function Home() {
             collapsedSize={0}
             // sx={{ mx: "auto", display: "flex", justifyContent: "center" }}
           >
+            {Auth.loggedIn() ? (
+              <Collapse in={open} sx={{ mt: 4 }}>
+                <Alert
+                  severity="success"
+                  action={
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => {
+                        setOpen(false);
+                      }}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                  }
+                  sx={{ mb: 2 }}
+                >
+                  You are successfully logged in.
+                </Alert>
+              </Collapse>
+            ) : null}
             <GlitchFx>
               <Box
                 component={"img"}
