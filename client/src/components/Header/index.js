@@ -13,9 +13,15 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Auth from "../../utils/auth";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Blog", "Events", "Reviews", "Store", "Contact"];
+
+const logout = (event) => {
+  event.preventDefault();
+  Auth.logout();
+};
 
 export default function Header(props) {
   const { window } = props;
@@ -50,6 +56,13 @@ export default function Header(props) {
             )}
           </ListItem>
         ))}
+        {Auth.loggedIn() ? (
+          <ListItem key="Log Out" disablePadding>
+            <ListItemButton onClick={logout} sx={{ textAlign: "center" }}>
+              <ListItemText primary={"Log Out"} />
+            </ListItemButton>
+          </ListItem>
+        ) : null}
       </List>
     </Box>
   );
