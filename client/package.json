@@ -1,10 +1,11 @@
 {
-  "name": "buck-short",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://amachkel.github.io/buck-short",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@apollo/client": "^3.5.8",
+    "@date-io/date-fns": "^2.14.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
@@ -19,6 +20,7 @@
     "react-glitch-fx": "^0.3.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.7",
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4",
     "graphql": "^15.4.0",
@@ -32,9 +34,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
