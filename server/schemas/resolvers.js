@@ -53,9 +53,10 @@ const resolvers = {
 
       return { token, user };
     },
-    addBlogPost: async (parent, { blogPostText }, context) => {
+    addBlogPost: async (parent, { blogTitle, blogPostText }, context) => {
       if (context.user) {
         const blogPost = await BlogPost.create({
+          blogTitle,
           blogPostText,
           postAuthor: context.user.firstName,
         });

@@ -12,8 +12,9 @@ const typeDefs = gql`
 
   type BlogPost {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
+    blogTitle: String
+    blogPostText: String
+    postAuthor: String
     createdAt: String
     comments: [Comment]!
   }
@@ -32,8 +33,8 @@ const typeDefs = gql`
 
   type Query {
     users: [User]
-    user(username: String!): User
-    blogPosts(username: String): [BlogPost]
+    user(firstName: String!): User
+    blogPosts(firstName: String): [BlogPost]
     blogPost(blogPostId: ID!): BlogPost
     me: User
   }

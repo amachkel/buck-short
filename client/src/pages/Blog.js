@@ -13,7 +13,7 @@ const Blog = () => {
   const { loading, data } = useQuery(QUERY_BLOGPOSTS);
   const blogPosts = data?.blogPosts || [];
   return (
-    <div className="gradient-card">
+    <div className="blog-card">
       {Auth.loggedIn() ? (
         <Container>
           <Card
