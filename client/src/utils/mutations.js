@@ -47,20 +47,30 @@ export const ADD_BLOGPOST = gql`
       comments {
         _id
         commentText
+        commentAuthor
       }
     }
   }
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($blogPostId: ID!, $commentText: String!) {
-    addComment(blogPostId: $blogPostId, commentText: $commentText) {
+  mutation addComment(
+    $blogPostId: ID!
+    $commentAuthor: String!
+    $commentText: String!
+  ) {
+    addComment(
+      blogPostId: $blogPostId
+      commentAuthor: $commentAuthor
+      commentText: $commentText
+    ) {
       _id
       blogPostText
       postAuthor
       createdAt
       comments {
         _id
+        commentAuthor
         commentText
         createdAt
       }
@@ -78,6 +88,7 @@ export const REMOVE_BLOGPOST = gql`
       createdAt
       comments {
         _id
+        commentAuthor
         commentText
       }
     }
@@ -88,6 +99,7 @@ export const REMOVE_COMMENT = gql`
   mutation removeComment($commentId: ID!) {
     removeComment(commentId: $commentId) {
       _id
+      commentAuthor
       commentText
       createdAt
     }

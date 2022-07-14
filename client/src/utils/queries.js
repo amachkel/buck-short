@@ -9,6 +9,7 @@ export const QUERY_USER = gql`
       email
       blogPosts {
         _id
+        blogTitle
         blogPostText
         createdAt
       }
@@ -55,6 +56,7 @@ export const QUERY_ME = gql`
       email
       blogPosts {
         _id
+        blogTitle
         blogPostText
         createdAt
       }
