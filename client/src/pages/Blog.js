@@ -13,7 +13,7 @@ const Blog = () => {
   const { loading, data } = useQuery(QUERY_BLOGPOSTS);
   const blogPosts = data?.blogPosts || [];
   return (
-    <div className="gradient-card">
+    <div className="blog-card">
       {Auth.loggedIn() ? (
         <Container>
           <Card
@@ -36,13 +36,13 @@ const Blog = () => {
             <div>Loading...</div>
           ) : (
             <Box>
-              <BlogList blogPosts={blogPosts} title="Discussions..." />
+              <BlogList blogPosts={blogPosts} title="Buck Short Blog" />
             </Box>
           )}
         </Container>
       ) : (
         <Box>
-          <BlogList blogPosts={blogPosts} title="Discussions..." />
+          <BlogList blogPosts={blogPosts} title="Buck Short Blog" />
         </Box>
       )}
     </div>

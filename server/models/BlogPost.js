@@ -2,11 +2,18 @@ const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
 const blogPostSchema = new Schema({
+  blogTitle: {
+    type: String,
+    required: true,
+    minlength: 1,
+    maxlength: 50,
+    trim: true,
+  },
   blogPostText: {
     type: String,
     required: "This field is required.",
     minlength: 1,
-    maxlength: 500,
+    maxlength: 1000,
     trim: true,
   },
   postAuthor: {

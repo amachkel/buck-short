@@ -20,6 +20,7 @@ export const QUERY_BLOGPOSTS = gql`
   query getBlogPosts {
     blogPosts {
       _id
+      blogTitle
       blogPostText
       postAuthor
       createdAt
@@ -31,6 +32,7 @@ export const QUERY_SINGLE_BLOGPOST = gql`
   query getSingleBlogPost($blogPostId: ID!) {
     blogPost(blogPostId: $blogPostId) {
       _id
+      blogTitle
       blogPostText
       postAuthor
       createdAt

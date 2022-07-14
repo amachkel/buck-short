@@ -40,6 +40,7 @@ export const ADD_BLOGPOST = gql`
   mutation addBlogPost($blogPostText: String!) {
     addBlogPost(blogPostText: $blogPostText) {
       _id
+      blogTitle
       blogPostText
       postAuthor
       createdAt
@@ -71,6 +72,7 @@ export const REMOVE_BLOGPOST = gql`
   mutation removeBlogPost($blogPostId: ID!) {
     removeBlogPost(blogPostId: $blogPostId) {
       _id
+      blogTitle
       blogPostText
       postAuthor
       createdAt
