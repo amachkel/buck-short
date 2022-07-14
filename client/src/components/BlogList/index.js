@@ -69,7 +69,7 @@ const BlogList = ({
                   >
                     <FontAwesomeIcon
                       icon={faCommentAlt}
-                      color="#6B3567"
+                      color="#FFFFFF"
                       size="lg"
                     />
                   </Link>
