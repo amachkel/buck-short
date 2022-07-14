@@ -36,13 +36,13 @@ const Blog = () => {
             <div>Loading...</div>
           ) : (
             <Box>
-              <BlogList blogPosts={blogPosts} title="Discussions..." />
+              <BlogList blogPosts={blogPosts} title="Buck Short Blog" />
             </Box>
           )}
         </Container>
       ) : (
         <Box>
-          <BlogList blogPosts={blogPosts} title="Discussions..." />
+          <BlogList blogPosts={blogPosts} title="Buck Short Blog" />
         </Box>
       )}
     </div>
