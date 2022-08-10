@@ -71,21 +71,18 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addComment: async (parent, { blogPostId, commentText }, context) => {
-      if (context.user) {
-        return BlogPost.findOneAndUpdate(
-          { _id: blogPostId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.firstName },
-            },
+      return BlogPost.findOneAndUpdate(
+        { _id: blogPostId },
+        {
+          $addToSet: {
+            comments: { commentText, commentAuthor },
           },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
-      }
-      throw new AuthenticationError("You need to be logged in!");
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     },
     removeBlogPost: async (parent, { blogPostId }, context) => {
       if (context.user) {
@@ -111,7 +108,7 @@ const resolvers = {
             $pull: {
               comments: {
                 _id: commentId,
-                commentAuthor: context.user.firstName,
+                commentAuthor: commentAuthor,
               },
             },
           },

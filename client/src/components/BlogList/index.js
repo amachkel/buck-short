@@ -8,12 +8,7 @@ import Typography from "@mui/material/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt } from "@fortawesome/free-solid-svg-icons";
 
-const BlogList = ({
-  blogPosts,
-  title,
-  showTitle = true,
-  showUsername = true,
-}) => {
+const BlogList = ({ blogPosts, title, showTitle = true }) => {
   if (!blogPosts.length) {
     return <h3>Your blog posts will display here.</h3>;
   }
@@ -33,33 +28,22 @@ const BlogList = ({
             >
               <CardContent>
                 {" "}
-                {showUsername ? (
-                  <Typography variant="h4">
-                    <Box
-                      sx={{
-                        p: 2,
-                        backgroundColor: "secondary.extraLight",
-                        borderRadius: "3px",
-                      }}
-                    >
-                      <Link
-                        underline="hover"
-                        href={`/blogPosts/${blogPost._id}`}
-                      >
-                        {blogPost.blogTitle} <br />
-                      </Link>
-                      <Typography>{blogPost.blogPostText}</Typography>
-                    </Box>
-                  </Typography>
-                ) : (
-                  <>
-                    <Typography sx={{ fontSize: "1rem" }}>
-                      You created this on {blogPost.createdAt}
-                    </Typography>
-                  </>
-                )}
+                <Typography variant="h4">
+                  <Box
+                    sx={{
+                      p: 2,
+                      backgroundColor: "secondary.extraLight",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    <Link underline="hover" href={`/blogPosts/${blogPost._id}`}>
+                      {blogPost.blogTitle} <br />
+                    </Link>
+                    <Typography>{blogPost.blogPostText}</Typography>
+                  </Box>
+                </Typography>
                 <Typography sx={{ color: "secondary.main" }}>
-                  Posted by {blogPost.postAuthor}
+                  Posted by {blogPost.postAuthor} on {blogPost.createdAt}
                 </Typography>
                 <Button variant="contained">
                   <Link

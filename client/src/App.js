@@ -17,7 +17,7 @@ import Events from "./pages/Blog";
 import Reviews from "./pages/Reviews";
 import Store from "./pages/Store";
 import BsAdmin from "./pages/BsAdmin";
-import Post from "./pages/Post";
+import SinglePost from "./pages/SinglePost";
 import Contact from "./pages/Contact";
 
 // Construct our main GraphQL API endpoint
@@ -56,7 +56,7 @@ function App() {
             <Route path="/Reviews" element={<Reviews />} />
             <Route path="/Store" element={<Store />} />
             <Route path="/Blog" element={<Blog />} />
-            <Route path="/Blog/:id" element={<Post />} />
+            <Route path="/BlogPosts/:blogPostId" element={<SinglePost />} />
             <Route path="/BsAdmin" element={<BsAdmin />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>
