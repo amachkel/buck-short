@@ -18,11 +18,11 @@ const CommentForm = ({ blogPostId }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    console.log(commentText);
+    console.log(commentAuthor);
     try {
       await addComment({
         variables: {
-          blogPostId,
           commentText,
           commentAuthor,
         },
@@ -56,7 +56,7 @@ const CommentForm = ({ blogPostId }) => {
         Character Count: {characterCount}/280
         {error && (
           <Stack sx={{ width: "100%" }} spacing={2}>
-            <Alert severity="error">This field is required</Alert>
+            <Alert severity="error">Something went wrong</Alert>
           </Stack>
         )}
       </Typography>

@@ -56,7 +56,7 @@ function App() {
             <Route path="/Reviews" element={<Reviews />} />
             <Route path="/Store" element={<Store />} />
             <Route path="/Blog" element={<Blog />} />
-            <Route path="/BlogPosts/:id" element={<SinglePost />} />
+            <Route path="/BlogPosts/:blogPostId" element={<SinglePost />} />
             <Route path="/BsAdmin" element={<BsAdmin />} />
             <Route path="/Contact" element={<Contact />} />
           </Routes>
